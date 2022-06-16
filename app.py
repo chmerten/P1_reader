@@ -23,7 +23,7 @@ colors = [
 def line():
     line_labels=labels
     line_values=values
-    return render_template('line_chart.html', title='Bitcoin Monthly Price in USD', max=17000, labels=line_labels, values=line_values)
+    return render_template('line_chart.html', title='Bitcoin Monthly Price in USD', max=17000, labels=line_labels, values=line_values, tournesol='Aquaplouf')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
