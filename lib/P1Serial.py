@@ -25,7 +25,6 @@ class P1Serial():
                 # read input from serial port
                 p1line = self.serial.readline()
                 # P1 telegram starts with /
-                # We need to create a new empty telegram
                 if "/" in p1line.decode('ascii'):
                     p1telegram = bytearray()
                     print('*' * 60 + "\n")
@@ -48,6 +47,9 @@ class P1Serial():
             # flush the buffer
             self.serial.flush()
 
-
+    def parse_telegram(self,p1telegram):
+        output = []
+        for line in p1telegram.split(b'\r\n'):
+            print(line.decode('ascii'))
 
         
