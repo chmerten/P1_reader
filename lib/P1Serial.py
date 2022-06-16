@@ -18,7 +18,7 @@ class P1Serial():
             "0-0:17.0.0" : "Power [kVA]"
         }
 
-    def get_telegram():
+    def get_telegram(self):
         p1telegram = bytearray()
         while True:
             try:
