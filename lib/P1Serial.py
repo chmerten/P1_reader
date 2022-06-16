@@ -24,8 +24,6 @@ class P1Serial():
             try:
                 # read input from serial port
                 p1line = self.serial.readline()
-                if debug:
-                    print ("Reading: ", p1line.strip())
                 # P1 telegram starts with /
                 # We need to create a new empty telegram
                 if "/" in p1line.decode('ascii'):
