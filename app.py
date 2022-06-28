@@ -1,6 +1,16 @@
 from flask import Flask, Markup, render_template
+import os
+from flask_sqlalchemy import SQLAlchemy
+from datetime import datetime
 
 app = Flask(__name__)
+
+# find the main Python file and use this to add the database, which we will call qtdata.db to the same folder that the app.py Python file is located in
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'app_data.db')
+app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
+# bind the database instance to our specific application:
+db = SQLAlchemy(app)
 
 labels = [
     'JAN', 'FEB', 'MAR', 'APR',
